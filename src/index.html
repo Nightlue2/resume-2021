@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <title>我的简历</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eee;
+      margin: 20px 0;
+    }
+
+    article {
+      width: 21cm;
+      min-height: 29.7cm;
+      background: white;
+      margin: 0 auto;
+      overflow: auto;
+      padding: 1em;
+    }
+  </style>
+  <style media="print">
+    body {
+      margin: 0;
+    }
+
+    .page2 {
+      /* page-break-before: always; */
+      /* margin-top: 10px; */
+    }
+  </style>
+  <style>
+    p {
+      margin: 0.2em 0;
+    }
+
+    h1 {
+      font-size: 25px;
+      margin-top: 0;
+      margin-bottom:0.6em;
+    }
+    
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    strong {
+      font-weight: normal;
+      color: #f60;
+    }
+
+    a {
+      color: rgb(255, 130, 46);
+      text-decoration: none;
+    }
+
+    p,
+    li {
+      color: #666;
+    }
+
+    strong {
+      font-weight: normal;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+
+    header {
+      position: relative;
+    }
+
+    header>img {
+      width: 80px;
+      height: auto;
+      position: absolute;
+      left: 90%;
+      top: 113%;
+    }
+
+    .bio {
+      position: relative;
+    }
+
+    .bio img {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  </style>
+
+  <style>
+    .projects {}
+
+    .projects h2{
+      margin:0.6em 0;
+    }
+
+    .projects p {
+      color: #666;
+      line-height: 30px;
+    }
+
+    .projects strong {
+      color: #f60;
+    }
+
+    .projects>ol {
+      margin-top: 20px;
+      list-style-position: inside;
+      padding: 0;
+    }
+
+    .projects>ol>li {
+      margin-bottom: 24px;
+    }
+
+    .projects>ol>li>header {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 3px;
+    }
+
+    .projects>ol>li>header>span {
+      vertical-align: bottom;
+    }
+
+    .projects>ol>li h3 {
+      display: inline-block;
+    }
+
+    .projects>ol>li>p>h4 {
+      font-size: 18px;
+    }
+  </style>
+  <style>
+    #skills {
+      width: 500px;
+      height: 270px;
+    }
+
+    @media print {
+      #skills {
+        display: none;
+      }
+    }
+    .skills h2{
+      margin-top:0.3em;
+      margin-bottom: 0.5em;
+    }
+    
+    .skills>.wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .skills>.wrapper> :first-child {
+      margin-right: 24px;
+    }
+
+    .skills>.wrapper>#skills {}
+
+    .skills>.wrapper>ul {
+      color: #666;
+    }
+
+    .skills>.wrapper strong {
+      color: #f60;
+    }
+
+    .skills>.wrapper>ul>li {
+      line-height: 27px;
+      margin-bottom: 7px;
+    }
+  </style>
+  <style>
+    .openSource {}
+
+    .openSource>h2 {
+      margin-top:0.3em;
+      margin-bottom:0.5em;
+    }
+
+    /* .openSource header img {
+      position: absolute;
+      top: 0;
+      right: 0;
+    } */
+
+    .openSource>ul {}
+
+    .openSource>ul>li {
+      margin-bottom: 25px;
+    }
+
+    .openSource header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .openSource h3 {}
+  </style>
+  <style>
+    .jobs {}
+
+    .jobs>h2 {}
+
+    .jobs>ol {}
+
+    .jobs>ol>li {
+      margin: 12px 0;
+    }
+
+    .jobs header {
+      display: flex;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .jobs header>h3 {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .jobs header>h4 {
+      margin-left: 1em;
+      font-size: 18px;
+    }
+
+    .jobs header>span {
+      font-size: 18px;
+      margin-left: auto;
+    }
+
+    .others ul {
+      position: relative;
+    }
+
+    .others img:nth-child(2) {
+      width: 60px;
+      height: auto;
+      position: absolute;
+      left: 60%;
+      top: -30%;
+    }
+
+    .others img:last-child {
+      width: 60px;
+      height: auto;
+      position: absolute;
+      left: 60%;
+      top: 80%;
+    }
+  </style>
+
+  <style>
+    @media (max-width: 500px) {
+      body {
+        margin: 0;
+      }
+
+      article {
+        width: auto;
+        height: auto;
+      }
+
+      .bio img {
+        display: none;
+      }
+
+      .skills .wrapper {
+        flex-direction: column;
+      }
+
+      #skills {
+        width: auto;
+      }
+
+      .jobs header {
+        flex-direction: column;
+      }
+
+      .jobs header>h3,
+      .jobs header>h4,
+      .jobs header>span {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <section class="bio">
+      <h1>王靖然</h1>
+      <img src="https://i.loli.net/2020/11/05/4KOuoBmeEa7Gfl9.jpg" alt="" width="auto" height="120%" />
+      <p>男 | 21岁 | 前端开发工程师</p>
+      <p>18024522599 | conhttp@163.com | 微信：ylj2048</p>
+    </section>
+
+    <section class="projects">
+      <h2>项目经历</h2>
+      <ol>
+        <li>
+          <header style="border-bottom:1px solid #bbb;">
+            <h3>Cloud UI组件库</h3>
+            <span style="display:flex;align-items: flex-end;">
+              <a style="margin-right:10px;" href="https://github.com/Nightlue2/cloud-ui">源码链接</a>
+              <a href="https://nightlue2.gitee.io/cloud-ui-website" target="_blank">项目预览</a>
+            </span>
+            <img src="images/cloud.png">
+          </header>
+          <p>
+            <h4 style="font-weight: bold;margin-top: 15px;">概述</h4>
+            <p>借鉴了AntDesign，使用<strong>Vue3</strong>和<strong>TypeScript</strong>开发的一个UI组件库。</p>
+            <p>涵盖了Button、Switch、Dialog、TimePicker等常用组件。</p>
+            <h4 style="font-weight: bold;margin-top: 15px;">功能描述</h4>
+            <p>用户可以通过npm安装该组件库到自己的项目中，引入并使用不同的组件。</p>
+            <p>组件使用了Vue3中新增的<strong>setup</strong>，<strong>ref</strong>，<strong>watchEffect</strong>等Composition API。</p>
+            <p>Dialog组件中使用到了<strong>Teleport</strong>，代码逻辑更加清晰。</p>
+            <p>使用Icon组件封装了svg，使得各组件引用svg更加方便。</p>
+            <p>Switch组件中使用了<strong>伪元素</strong>模拟加载中动画，节省了引入svg的时间。</p>
+          </p>
+        </li>
+        <li>
+          <header style="border-bottom:1px solid #bbb;">
+            <h3>XC记账</h3>
+            <span style="display:flex;align-items: flex-end;">
+              <a style="margin-right:10px;" href="https://github.com/Nightlue2/money-demo-1">源码链接</a>
+              <a href="http://nightlue2.gitee.io/xcmoney" target="_blank">项目预览</a>
+            </span>
+            <img src="images/xcmoney.png">
+          </header>
+          <p>
+            <h4 style="font-weight: bold;margin-top: 15px;">概述</h4>
+            <p>使用Vue搭建的一款简洁的记账应用，设计上借鉴了同类的记账软件的页面。</p>
+            <h4 style="font-weight: bold;margin-top: 15px;">功能描述</h4>
+            <p>用户可记录当天或者之前的账单，并且为其添加备注。</p>
+            <p>开发中使用了包括<strong> Vuex </strong>,<strong> VueRouter </strong>,<strong> TypeScript </strong>和<strong> SCSS
+              </strong>等技术</p>
+            <p>应用可在移动端运行，可以折线图展示支出以及收入情况。</p>
+            <p>应用主要由记账、展示图表、修改标签三个页面组成，页面的跳转通过VueRouter实现，各组件间的数据主要存放在Vuex的store实例中</p>
+            <p>项目源码大量使用了TypeScript，其中用到了<strong>vue-property-decorator</strong>里的装饰器。</p>
+          </p>
+        </li>
+        <li>
+          <header style="border-bottom:1px solid #bbb;">
+            <h3>Timer-计时器</h3>
+            <span style="display:flex;align-items: flex-end;">
+              <a style="margin-right:10px;" href="https://github.com/Nightlue2/timer-1">源码链接</a>
+              <a href="https://nightlue2.gitee.io/timer-1/" target="_blank">项目预览</a>
+            </span>
+            <img src="images/timer.png">
+          </header>
+          <p>
+            <h4 style="font-weight: bold;margin-top: 15px;">概述</h4>
+            <p>独立设计，使用原生CSS开发的优雅的计时器</p>
+            <h4 style="font-weight: bold;margin-top: 15px;">功能描述</h4>
+            <p>用户可以自定义计时，暂停计时，以及重置当前计时</p>
+            <p>之前的计时设置可以保存，下次可直接开启计时</p>
+            <p>字体文件使用<strong> font-spider </strong>进行压缩，通过<strong> localStorage </strong>保存数据。</p>
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="skills">
+      <h2>技能</h2>
+      <div class="wrapper">
+        <ul>
+          <li>
+            了解MVVM，熟悉Vue技术栈如<strong> Vue </strong>/<strong> Vuex </strong>/<strong> VueRouter </strong>的使用
+          </li>
+          <li>
+            熟悉原生JavaScript，对ES6新标准有一定了解，如<strong> Promise </strong>、<strong> this </strong>等，能够进行模块化的编程
+          </li>
+          <li>
+            能使用合理的结构和样式编写兼容主流浏览器的页面，熟悉<strong>HTML5 </strong>、<strong> CSS3 </strong>的新特性
+          </li>
+          <li>
+            熟悉<strong> 盒模型 </strong>，擅长传统布局、flex布局和grid布局，对移动端适配有一定了解
+          </li>
+          <li>
+            了解前后端分离技术，包括<strong> AJAX </strong>、<strong>跨域 </strong>、<strong>Cookie </strong>和<strong> Session
+            </strong>等
+          </li>
+          <li>了解基本的数据结构和算法</li>
+          <li>了解<strong> TypeScript</strong>，并能将其运用于项目的开发中</li>
+          <li>熟练使用Git进行开发部署</li>
+          <li>了解webpack的配置，在项目中使用其作为构建工具</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="openSource">
+      <h2>开源项目</h2>
+      <ul>
+        <li>
+          <header>
+            <h3>简易 DOM 库</h3>
+            <span>
+              <a href="https://github.com/Nightlue2/DOM-demo-1">源码链接</a>
+              <a href="http://nightlue2.gitee.io/dom-demo-1" target="_blank">项目预览</a>
+            </span>
+            <img src="images/dom.png">
+          </header>
+          <p>
+            仿照jQuery，实现了元素选择、元素创建、<strong>事件委托</strong>、元素遍历等常见功能
+          </p>
+          <p>使用到了ES6的<strong> Promise </strong>、<strong>async </strong>和<strong> await </strong>，加深了我对异步编程的理解</p>
+        </li>
+        <li class="page2">
+          <header>
+            <h3>小小皮卡丘</h3>
+            <span>
+              <a href="https://github.com/Nightlue2/pikachu-static">源码链接</a>
+              <a href="https://nightlue2.github.io/pikachu-static/dist/" target="_blank">项目预览</a>
+            </span>
+            <img src="images/pikachu.png">
+          </header>
+          <p>使用border-radius做出了基本图形，并使用了CSS的<strong>animation</strong></p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="others">
+      <h2>其他链接</h2>
+      <ul>
+        <li style="margin-bottom: 10px;">
+          <a href="https://nightlue2.github.io/">我的博客</a>，平时作为存放技术文章的仓库
+        </li>
+        <img src="images/blog.png" alt="">
+        <li style="margin-bottom: 10px;">
+          <a href="https://github.com/Nightlue2">我的 GitHub</a>，近半年内有
+          100 多次提交记录
+        </li>
+        <img src="images/blog.png" alt="">
+      </ul>
+    </section>
+
+    <section class="education" style="margin-bottom: 30px;">
+      <h2>教育经历</h2>
+      <p>
+        <span><time>2017年</time>~<time>至今 </time></span>
+        广州大学 信息安全 本科
+      </p>
+    </section>
+  </article>
+</body>
+
+</html>
